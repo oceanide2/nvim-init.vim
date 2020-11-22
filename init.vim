@@ -1,7 +1,6 @@
 " vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'connorholyday/vim-snazzy'
-Plug 'junegunn/seoul256.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
