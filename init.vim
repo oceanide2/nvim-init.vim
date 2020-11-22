@@ -69,7 +69,10 @@ nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
 nnoremap <silent> <Leader>/ :BLines<CR>
 nnoremap <silent> <Leader>g :Commits<CR>
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 
 " nerdtree
 let g:NERDTreeShowHidden = 1
