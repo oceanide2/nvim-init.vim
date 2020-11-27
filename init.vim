@@ -116,12 +116,17 @@ set showmatch       " hightlight matching [{()}]
 set showcmd         " show command in bottom bar
 set laststatus=2    " turn on bottom bar
 
+" search
+" search for word under the cursor
+nnoremap <leader>/ "fyiw :/<c-r>f<cr>
+set ignorecase      " make searches case-insensitive
+
 " Misc
 set backspace=2     " set backspace=indent,eol,start
-set ignorecase      " make searches case-insensitive
 set nobackup        " don't keep a backup files
 set noundofile      " disable persistence undo
 set history=1000    " set how many lines of history to remember
+set updatetime=300  " set updatetime
 
 " switch between split window easily
 noremap <C-j> <C-W>j
@@ -131,6 +136,9 @@ noremap <C-l> <C-W>l
 
 " autocmd
 autocmd BufWritePre * %s/\s\+$//e
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
