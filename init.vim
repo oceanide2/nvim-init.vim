@@ -36,6 +36,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
         \}
 
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-slash'
 Plug 'preservim/nerdtree'
     let g:NERDTreeShowHidden = 1
     let g:NERDTreeMinimalUI = 1
