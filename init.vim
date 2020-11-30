@@ -1,6 +1,10 @@
 " leader shortcuts
 let mapleader=' '   " change mapleader to space
 
+" edit/source vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'haishanh/night-owl.vim'
@@ -18,12 +22,13 @@ Plug 'nathanaelkane/vim-indent-guides'
     let g:indent_guides_start_level=2
     let g:indent_guides_guide_size=1
 
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    nnoremap <silent> <leader>b :Buffers<CR>
-    nnoremap <silent> <leader>f :Files<CR>
+    nnoremap <silent> <leader>fb :Buffers<CR>
+    nnoremap <silent> <leader>ff :Files<CR>
     nnoremap <silent> <leader>rg :Rg<CR>
-    nnoremap <silent> <leader>/ :BLines<CR>
-    nnoremap <silent> <leader>g :Commits<CR>
+    nnoremap <silent> <leader>f/ :BLines<CR>
+    nnoremap <silent> <leader>fc :Commits<CR>
     command! -bang -nargs=* Rg
         \ call fzf#vim#grep(
         \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
@@ -47,7 +52,10 @@ Plug 'preservim/nerdtree'
     " Toggle
     nnoremap <silent> <leader>ne :NERDTreeToggle<CR>
 
-Plug 'preservim/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
@@ -58,7 +66,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
         \ 'coc-css',
         \ 'coc-html',
         \ 'coc-json',
-        \ 'coc-prettier',
+        \ 'coc-eslint',
         \ 'coc-tsserver',
         \ 'coc-highlight',
         \]
@@ -157,4 +165,4 @@ function! OpenTerminal()
     split term://zsh
     resize 10
 endfunction
-nnoremap <leader>t :call OpenTerminal()<CR>
+nnoremap <leader>rt :call OpenTerminal()<CR>
