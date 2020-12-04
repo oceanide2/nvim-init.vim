@@ -232,6 +232,7 @@ set nobackup        " don't keep a backup files
 set noundofile      " disable persistence undo
 set history=1000    " set how many lines of history to remember
 set updatetime=300  " set updatetime
+set colorcolumn=80  " set mark for column 80
 
 " switch between split window easily
 noremap <C-j> <C-W>j
