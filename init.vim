@@ -5,6 +5,10 @@ let mapleader=' '   " change mapleader to space
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" remap escape to jk and disable escape
+inoremap jk <esc>
+inoremap <esc> <nop>
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'haishanh/night-owl.vim'
