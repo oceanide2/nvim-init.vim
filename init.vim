@@ -44,6 +44,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
         \ 'ctrl-v': 'vsplit',
         \}
 
+  au! FileType fzf tunmap <buffer> <Esc>
+
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-slash'
 Plug 'preservim/nerdtree'
