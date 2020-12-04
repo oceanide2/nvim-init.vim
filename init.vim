@@ -268,12 +268,12 @@ augroup END
 set splitright
 set splitbelow
 " turn terminal to normal mode with escape
-tnoremap <Esc> <C-\><C-n>
+au! TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
 " start terminal in insert mode
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 function! OpenTerminal()
     split term://zsh
-    resize 10
+    resize 15
 endfunction
-nnoremap <leader>rt :call OpenTerminal()<CR>
+nnoremap <leader>j :call OpenTerminal()<CR>
