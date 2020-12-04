@@ -233,12 +233,21 @@ set noundofile      " disable persistence undo
 set history=1000    " set how many lines of history to remember
 set updatetime=300  " set updatetime
 set colorcolumn=80  " set mark for column 80
+set mouse=a         " enable mouse
 
 " switch between split window easily
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-h> <C-W>h
-noremap <C-l> <C-W>l
+tnoremap <C-j> <C-\><C-n><C-W>j
+tnoremap <C-k> <C-\><C-n><C-W>k
+tnoremap <C-h> <C-\><C-n><C-W>h
+tnoremap <C-l> <C-\><C-n><C-W>l
+inoremap <C-j> <C-\><C-n><C-W>j
+inoremap <C-k> <C-\><C-n><C-W>k
+inoremap <C-h> <C-\><C-n><C-W>h
+inoremap <C-l> <C-\><C-n><C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 " autocmd
 augroup vimrc_autocmd
