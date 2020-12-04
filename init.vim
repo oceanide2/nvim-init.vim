@@ -262,6 +262,7 @@ augroup vimrc_autocmd
     autocmd! FileType css setlocal ts=2 sts=2 sw=2 et
     autocmd! FileType javascript setlocal ts=2 sts=2 sw=2 et
     autocmd! FileType javascriptreact setlocal ts=2 sts=2 sw=2 et
+    autocmd! FileType * setlocal formatoptions-=cro
 augroup END
 
 " open nvim built-in terminal
