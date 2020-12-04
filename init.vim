@@ -240,14 +240,17 @@ noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
 " autocmd
-autocmd BufWritePre * %s/\s\+$//e
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd FileType javascriptreact setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+augroup vimrc_autocmd
+    autocmd!
+    autocmd BufWritePre * %s/\s\+$//e
+    autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+    autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+    autocmd! FileType json setlocal ts=2 sts=2 sw=2 et
+    autocmd! FileType html setlocal ts=2 sts=2 sw=2 et
+    autocmd! FileType css setlocal ts=2 sts=2 sw=2 et
+    autocmd! FileType javascript setlocal ts=2 sts=2 sw=2 et
+    autocmd! FileType javascriptreact setlocal ts=2 sts=2 sw=2 et
+augroup END
 
 " open nvim built-in terminal
 set splitright
