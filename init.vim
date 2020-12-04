@@ -51,6 +51,8 @@ Plug 'preservim/nerdtree'
     let g:NERDTreeMinimalUI = 1
     let g:NERDTreeIgnore = []
     let g:NERDTreeStatusline = ''
+    let g:NERDTreeGitStatusWithFlags = 1
+    let g:NERDTreeIgnore = ['^node_modules$']
     " Automaticaly close nvim if NERDTree is only thing left open
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     " Toggle
