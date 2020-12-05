@@ -10,10 +10,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'haishanh/night-owl.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-    let g:airline#extensions#tabline#enabled=1  " turn on buffer list
+    let g:airline#extensions#tabline#enabled=1         " turn on buffer list
+    let g:airline#extensions#tabline#buffer_nr_show=1  " show buffer number
     let g:airline_theme='night_owl'
-    nnoremap <leader>q :bp<CR>
-    nnoremap <leader>w :bn<CR>
 
 Plug 'nathanaelkane/vim-indent-guides'
     let g:indentguides_spacechar = '┆'
