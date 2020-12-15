@@ -63,6 +63,14 @@ Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'kassio/neoterm'
+    let g:neoterm_default_mod = 'botright'
+    let g:neoterm_autoinsert = 1
+    let g:neoterm_size = 15
+    au! TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+    au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+    nnoremap <silent> <leader>tt :Ttoggle<CR>
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
     let g:coc_global_extensions = [
         \ 'coc-emmet',
@@ -259,17 +267,3 @@ augroup vimrc_autocmd
     autocmd! FileType javascriptreact setlocal ts=2 sts=2 sw=2 et
     autocmd! FileType * setlocal formatoptions-=cro
 augroup END
-
-" open nvim built-in terminal
-set splitright
-set splitbelow
-" turn terminal to normal mode with escape
-au! TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
-" start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-
-function! OpenTerminal()
-    split term://zsh
-    resize 15
-endfunction
-nnoremap <leader>j :call OpenTerminal()<CR>
