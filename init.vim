@@ -22,6 +22,11 @@ Plug 'nathanaelkane/vim-indent-guides'
     let g:indent_guides_guide_size=1
 
 Plug 'junegunn/rainbow_parentheses.vim'
+    let g:rainbow#max_level = 16
+    let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+    autocmd FileType * RainbowParentheses
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     nnoremap <silent> <leader>fb :Buffers<CR>
     nnoremap <silent> <leader>ff :Files<CR>
