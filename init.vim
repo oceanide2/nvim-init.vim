@@ -241,10 +241,6 @@ set colorcolumn=80  " set mark for column 80
 set mouse=a         " enable mouse
 
 " switch between split window easily
-tnoremap <C-j> <C-\><C-n><C-W>j
-tnoremap <C-k> <C-\><C-n><C-W>k
-tnoremap <C-h> <C-\><C-n><C-W>h
-tnoremap <C-l> <C-\><C-n><C-W>l
 inoremap <C-j> <C-\><C-n><C-W>j
 inoremap <C-k> <C-\><C-n><C-W>k
 inoremap <C-h> <C-\><C-n><C-W>h
